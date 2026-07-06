@@ -48,7 +48,7 @@
                         <td>$ {{ number_format($pago->valor_pagado, 0, ',', '.') }}</td>
                         <td>
                             @if($pago->id)
-                               <a href="{{ route('ver.pdf', $pago->id) }}">
+                               <a href="{{ route('ver.pdf', $pago->id) }}" target="_blank" class="btn btn-link">
                                     <i class="bi bi-file-pdf-fill" style="font-size: 1.5rem; color: #dc3545;"></i>
                                 </a>
                             @else
