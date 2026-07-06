@@ -38,13 +38,12 @@ return [
             'report' => false,
         ],
 
-        'public' => [
-            'driver' => 'local',
+       'public' => [
+            'driver' => 'local',  // <-- Este driver debe existir
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
-            'report' => false,
         ],
 
         's3' => [

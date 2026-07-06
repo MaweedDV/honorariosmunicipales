@@ -17,5 +17,8 @@ Route::post('/honorario', [HonorariosController::class,'store'])->name('honorari
 Route::get('/funcionario/create', [FuncionarioController::class,'create'])->name('funcionario.create');
 Route::post('/funcionario', [FuncionarioController::class,'store'])->name('funcionario.store');
 
+//PDF VIEW
+use App\Http\Controllers\PdfController;
+Route::get('ver-pdf/{archivo}', [PdfController::class, 'ver'])->name('ver.pdf');
 
 

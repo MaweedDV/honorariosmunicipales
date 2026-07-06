@@ -2,6 +2,9 @@
 
 @section('content')
 
+<!-- Código de depuración - ELIMINAR DESPUÉS -->
+
+
 <div class="card">
     <div class="card-header">
         Honorarios Municipales - Informes de Pagos.
@@ -43,7 +46,7 @@
                         <td>$ {{ number_format($pago->valor_pagado, 0, ',', '.') }}</td>
                         <td>
                             @if($pago->pdf)
-                                <a href="{{ asset('storage/' . $pago->pdf) }}" target="_blank">
+                               <a href="{{ asset('storage/' . $pago->pdf) }}" target="_blank">
                                     <i class="bi bi-file-pdf-fill" style="font-size: 1.5rem; color: #dc3545;"></i>
                                 </a>
                             @else
@@ -55,6 +58,7 @@
                     <tr id="filaVacia">
                         <td colspan="6" class="text-center">No hay pagos registrados</td>
                     </tr>
+
                     @endforelse
                 </tbody>
             </table>
