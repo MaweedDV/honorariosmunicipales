@@ -12,6 +12,7 @@ class Informe extends Model
 
        protected $fillable = [
        'id_funcionario',
+       'ano_registro',
        'mes_pago',
        'valor_pagado',
        'pdf',

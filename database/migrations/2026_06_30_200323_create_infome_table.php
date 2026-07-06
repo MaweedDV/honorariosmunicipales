@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('informe', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_funcionario')->constrained('funcionario');
+            $table->integer('ano_registro')->unsigned();
             $table->string('mes_pago', 10);
             $table->string('valor_pagado', 20);
             $table->string('pdf', 100);

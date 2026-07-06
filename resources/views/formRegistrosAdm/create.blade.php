@@ -23,6 +23,20 @@
                     </select>
                 </div>
                 <div class="mb-12">
+                    <label for="exampleFormControlInput1" class="form-label">Año Registro</label>
+                    <select class="form-select" aria-label="Default select example" name="ano_registro">
+                        <option selected>Seleccione Año</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2028">2028</option>
+                    </select>
+                </div>
+                <div class="mb-12">
                     <label for="exampleFormControlInput1" class="form-label">Mes de Pago</label>
                     <select class="form-select" aria-label="Default select example" name="mes_pago">
                         <option selected>Seleccione Mes</option>

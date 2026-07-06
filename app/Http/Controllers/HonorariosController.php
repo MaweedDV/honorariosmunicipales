@@ -40,6 +40,7 @@ class HonorariosController extends Controller
         $validatedData = $request->validate([
             'funcionario_id' => 'required|exists:funcionarios,id',
             'valor_pagado' => 'required|numeric|min:0',
+            'ano_registro' => 'required|integer|min:1900|max:'.(date('Y') + 1),
             'mes_pago' => 'required',
             'pdf_honorario' => 'nullable|file|mimes:pdf|max:20480', // 20MB máximo
         ]);
@@ -66,6 +67,7 @@ class HonorariosController extends Controller
         Informe::create([
             'id_funcionario' => $validatedData['funcionario_id'],
             'valor_pagado' => $validatedData['valor_pagado'],
+            'ano_registro' => $validatedData['ano_registro'],
             'mes_pago' => $validatedData['mes_pago'],
             'pdf' => $rutaPdf, // Guarda la ruta del archivo
         ]);
@@ -100,6 +102,7 @@ class HonorariosController extends Controller
         $request->validate([
             'funcionario_id' => 'required|exists:funcionarios,id',
             'valor_pagado' => 'required|numeric|min:0',
+            'ano_registro' => 'required|integer|min:1900|max:'.(date('Y') + 1),
             'mes_pago' => 'required',
             'pdf_honorario' => 'nullable|file|mimes:pdf|max:20480',
         ]);
@@ -122,6 +125,7 @@ class HonorariosController extends Controller
         $informe->update([
             'id_funcionario' => $request->funcionario_id,
             'valor_pagado' => $request->valor_pagado,
+            'ano_registro' => $request->ano_registro,
             'mes_pago' => $request->mes_pago,
             'pdf' => $rutaPdf,
         ]);
