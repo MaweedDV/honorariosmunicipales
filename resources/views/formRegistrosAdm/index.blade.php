@@ -28,6 +28,7 @@
                         <th>Nombre Funcionario</th>
                         <th>Rut Funcionario</th>
                         <th>Mes de Pago</th>
+                        <th>Año de Registro</th>
                         <th>Valor Pagado</th>
                         <th>PDF</th>
                     </tr>
@@ -38,6 +39,7 @@
                         <td>{{ $pago->funcionario->nombre }}</td>
                         <td>{{ $pago->funcionario->rut }}</td>
                         <td>{{ $pago->mes_pago }}</td>
+                        <td>{{ $pago->ano_registro }}</td>
                         <td>$ {{ number_format($pago->valor_pagado, 0, ',', '.') }}</td>
                         <td>
                             @if($pago->pdf)
@@ -51,7 +53,7 @@
                     </tr>
                     @empty
                     <tr id="filaVacia">
-                        <td colspan="5" class="text-center">No hay pagos registrados</td>
+                        <td colspan="6" class="text-center">No hay pagos registrados</td>
                     </tr>
                     @endforelse
                 </tbody>
