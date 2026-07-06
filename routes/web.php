@@ -19,6 +19,7 @@ Route::post('/funcionario', [FuncionarioController::class,'store'])->name('funci
 
 //PDF VIEW
 use App\Http\Controllers\PdfController;
-Route::get('ver-pdf/{archivo}', [PdfController::class, 'ver'])->name('ver.pdf');
+Route::get('ver-pdf/{id}', [PdfController::class, 'ver'])->name('ver.pdf');
+
 
 

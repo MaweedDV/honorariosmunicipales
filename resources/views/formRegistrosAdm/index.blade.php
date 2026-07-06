@@ -28,6 +28,7 @@
             <table class="table table-bordered table-striped" id="tablaPagos">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre Funcionario</th>
                         <th>Rut Funcionario</th>
                         <th>Mes de Pago</th>
@@ -39,14 +40,15 @@
                 <tbody id="tablaBody">
                     @forelse ($pagos as $pago)
                     <tr>
+                        <td>{{ $pago->id }}</td>
                         <td>{{ $pago->funcionario->nombre }}</td>
                         <td>{{ $pago->funcionario->rut }}</td>
                         <td>{{ $pago->mes_pago }}</td>
                         <td>{{ $pago->ano_registro }}</td>
                         <td>$ {{ number_format($pago->valor_pagado, 0, ',', '.') }}</td>
                         <td>
-                            @if($pago->pdf)
-                               <a href="{{ asset('storage/' . $pago->pdf) }}" target="_blank">
+                            @if($pago->id)
+                               <a href="{{ route('ver.pdf', $pago->id) }}">
                                     <i class="bi bi-file-pdf-fill" style="font-size: 1.5rem; color: #dc3545;"></i>
                                 </a>
                             @else

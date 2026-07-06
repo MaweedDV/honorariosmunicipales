@@ -46,6 +46,14 @@ return [
             'throw' => false,
         ],
 
+        // Si tienes problemas, prueba con:
+        'pdfs_honorarios' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/pdfs_honorarios'),
+            'url' => env('APP_URL') . '/storage/pdfs_honorarios',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
