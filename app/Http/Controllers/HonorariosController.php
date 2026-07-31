@@ -42,7 +42,7 @@ class HonorariosController extends Controller
             'valor_pagado' => 'required|numeric|min:0',
             'ano_registro' => 'required|integer|min:1900|max:'.(date('Y') + 1),
             'mes_pago' => 'required',
-            'pdf_honorario' => 'nullable|file|mimes:pdf|max:20480', // 20MB máximo
+            'pdf_honorario' => 'nullable|file|mimes:pdf|max:51200', // 50MB máximo
         ]);
 
         // Procesar el archivo PDF
@@ -104,7 +104,7 @@ class HonorariosController extends Controller
             'valor_pagado' => 'required|numeric|min:0',
             'ano_registro' => 'required|integer|min:1900|max:'.(date('Y') + 1),
             'mes_pago' => 'required',
-            'pdf_honorario' => 'nullable|file|mimes:pdf|max:20480',
+            'pdf_honorario' => 'nullable|file|mimes:pdf|max:51200',
         ]);
 
         // Si se sube un nuevo PDF, eliminar el anterior y guardar el nuevo
